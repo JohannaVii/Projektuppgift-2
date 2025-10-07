@@ -5,11 +5,11 @@ public abstract class Product {
     // Gemensamma attribut
     private int articleNumber;
     private String title;
-    private double price;
+    private int price;
     private String description;
 
     // Konstruktor
-    public Product(int articleNumber, String title, double price, String description) {
+    public Product(int articleNumber, String title, int price, String description) {
         this.articleNumber = articleNumber;
         this.title = title;
         this.price = price;
@@ -39,6 +39,6 @@ public abstract class Product {
     // toString - Skriver ut produktens information
     @Override
     public String toString() {
-        return "[" + category() + "] " + title + " (" + articleNumber + ") - " + price + " kr\n" + description;
+        return "[" + category() + "] ID: " + articleNumber + " - " + " - " + price + " kr - " + description;
     }
 }

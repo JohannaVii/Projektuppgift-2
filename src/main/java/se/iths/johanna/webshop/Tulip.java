@@ -4,7 +4,7 @@ package se.iths.johanna.webshop;
 public class Tulip extends Product {
 
     // Konstruktor
-    public Tulip(int articleNumber, String title, double price, String description) {
+    public Tulip(int articleNumber, String title, int price, String description) {
         super(articleNumber, title, price, description);
     }
 

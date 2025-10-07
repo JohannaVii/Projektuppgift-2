@@ -4,7 +4,7 @@ package se.iths.johanna.webshop;
 public class Rose extends Product {
 
     // Konstruktor
-    public Rose(int articleNumber, String title, double price, String description) {
+    public Rose(int articleNumber, String title, int price, String description) {
         super(articleNumber, title, price, description);
     }
 
