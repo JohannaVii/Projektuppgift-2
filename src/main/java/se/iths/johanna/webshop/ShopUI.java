@@ -75,7 +75,7 @@ public class ShopUI implements UI {
         System.out.print("Ange en beskrivning: ");
         String description = scanner.nextLine();
 
-        Product newProduct = new NewProduct(category, articleNumber, title, price, description);
+        Product newProduct = new CustomProduct(category, articleNumber, title, price, description);
         catalog.add(newProduct);
 
         System.out.println("\nProdukten har lagts till!");

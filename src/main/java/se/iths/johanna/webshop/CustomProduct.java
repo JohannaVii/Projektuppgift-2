@@ -1,8 +1,8 @@
 package se.iths.johanna.webshop;
 
-public class NewProduct extends Product {
+public class CustomProduct extends Product {
     // Konstruktorn
-    public NewProduct(String category, int articleNumber, String title, int price, String description) {
+    public CustomProduct(String category, int articleNumber, String title, int price, String description) {
         super(articleNumber, title, price, description);
         this.category = category;
     }
