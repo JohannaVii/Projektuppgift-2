@@ -47,7 +47,7 @@ public class ShopUI implements UI {
         }
 
         System.out.println("\n<< | Tillbaka");
-        getInput("DITT VAL: ");
+        getInput("DITT VAL:");
         System.out.println("\n\n---\n\n");
     }
 
@@ -128,7 +128,7 @@ public class ShopUI implements UI {
 
     @Override
     public void saveProducts(List<Product> catalog) {
-        ProductSaveLoad.saveProducts(catalog);
+        ProductHandler.saveProducts(catalog);
         System.out.println("\nProdukter har sparats till fil!");
         System.out.println("\n<< | Tillbaka");
         getInput("DITT VAL: ");
@@ -136,7 +136,7 @@ public class ShopUI implements UI {
 
     @Override
     public List<Product> loadProducts() {
-        List<Product> products = ProductSaveLoad.loadProducts();
+        List<Product> products = ProductHandler.loadProducts();
         System.out.println("\nProdukter har laddats från fil!");
         System.out.println("\n<< | Tillbaka");
         getInput("DITT VAL: ");
