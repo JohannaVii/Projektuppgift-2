@@ -52,7 +52,7 @@ public class Application {
                         System.out.println("\n\n---\n\n");
                         System.out.println("=== PRODUKTKATALOG ===");
                         System.out.println("Alla produkter - Skriv tillbaka för att återgå till menyn\n");
-                        System.out.println("----------------------\n");
+                        System.out.println("---------------------------------------------------------\n");
 
                         if (catalog.isEmpty()) {
                             System.out.println("Produktkatalogen är tom.");
@@ -95,7 +95,7 @@ public class Application {
                         int articleNumber = scanner.nextInt();
                         scanner.nextLine();
 
-                        System.out.print("Title: ");
+                        System.out.print("Titel: ");
                         String title = scanner.nextLine();
 
                         System.out.print("Pris: ");
@@ -153,12 +153,26 @@ public class Application {
                                 for (Product product : catalog) {
                                     if (String.valueOf(product.getArticleNumber()).equals(removeChoice)) {
                                         catalog.remove(product);
-                                        System.out.println("Produkt är bortagen.");
+                                        System.out.println("\nProdukten är borttagen!");
+
+                                        // Låter användaren välja att gå tillbaka
+                                        System.out.println("\n<< | Tillbaka");
+                                        System.out.print("DITT VAL: ");
+                                        String input = scanner.nextLine().trim();
+
+                                        switch (input) {
+                                            case "Tillbaka", "tillbaka", "<<" -> {
+                                                case3 = false;
+                                                System.out.println("\n\n---\n\n");
+                                            }
+                                            default -> {
+                                                System.out.println("Ogiltigt val - Försök igen.");
+                                            }
+                                        }
                                         found = true;
                                         break;
                                     }
                                 }
-
                                 if (!found) {
                                     System.out.println("Finner inte produkten - Försök igen.");
                                 }

@@ -16,6 +16,6 @@ public class NewProduct extends Product {
 
     @Override
     public String toString() {
-        return "[" + category() + "] ID: " + getArticleNumber() + " - " + " - " + getPrice() + " kr - " + getDescription();
+        return "[" + category() + "] ID: " + getArticleNumber() + " - " + getTitle() + " - " + getPrice() + " kr - " + getDescription();
     }
 }
