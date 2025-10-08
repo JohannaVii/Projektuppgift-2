@@ -127,7 +127,7 @@ public class ShopUI implements UI {
     }
 
     @Override
-    public void saveProducts(List<Product> catalog) {
+    public void saveFromFile(List<Product> catalog) {
         ProductHandler.saveProducts(catalog);
         System.out.println("\nProdukter har sparats till fil!");
         System.out.println("\n<< | Tillbaka");
@@ -135,7 +135,7 @@ public class ShopUI implements UI {
     }
 
     @Override
-    public List<Product> loadProducts() {
+    public List<Product> loadFromFile() {
         List<Product> products = ProductHandler.loadProducts();
         System.out.println("\nProdukter har laddats från fil!");
         System.out.println("\n<< | Tillbaka");
