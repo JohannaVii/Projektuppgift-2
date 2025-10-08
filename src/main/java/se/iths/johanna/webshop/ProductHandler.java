@@ -12,9 +12,6 @@ public class ProductHandler {
 
     public static void saveProducts(List<Product> catalog) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter())) {
-            FileWriter writer = new FileWriter("products.txt");
-            BufferedWriter bw = new BufferedWriter(writer);
-
             for (Product product : catalog) {
                 String line = product.getArticleNumber() + ";" +
                         product.getTitle() + ";" +
@@ -40,6 +37,8 @@ public class ProductHandler {
 
                 String category = parts[4];
                 int articleNumber = Integer.parseInt(parts[0]);
+                String title = parts[1];
+                int price = Integer.parseInt(parts[2]);
                 String description = part[3];
 
                 Product product = new CustomProduct(category, articleNumber, title, price, description);
@@ -49,5 +48,6 @@ public class ProductHandler {
         } catch (IOException e) {
             System.out.println("Filen kunde inte läsas - Försök igen!");
         }
+        return products;
     }
 }
