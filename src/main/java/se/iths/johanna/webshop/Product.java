@@ -25,7 +25,7 @@ public abstract class Product {
         return title;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -39,6 +39,7 @@ public abstract class Product {
     // toString - Skriver ut produktens information
     @Override
     public String toString() {
-        return "[" + category() + "] ID: " + articleNumber + " - " + " - " + price + " kr - " + description;
+        return "[" + category() + "] ID: " + getArticleNumber() + " - "
+                + getTitle() + " - " + getPrice() + " kr - " + getDescription();
     }
 }

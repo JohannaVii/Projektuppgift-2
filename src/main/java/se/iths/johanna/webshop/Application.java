@@ -52,12 +52,13 @@ public class Application {
                         System.out.println("\n\n---\n\n");
                         System.out.println("=== PRODUKTKATALOG ===");
                         System.out.println("Alla produkter - Skriv tillbaka för att återgå till menyn\n");
+                        System.out.println("----------------------\n");
 
                         if (catalog.isEmpty()) {
                             System.out.println("Produktkatalogen är tom.");
                         } else {
                             for (Product product : catalog) {
-                                System.out.println(product + "\n");
+                                System.out.println(product);
                             }
                         }
 
@@ -84,15 +85,18 @@ public class Application {
                     while (case2) {
                         System.out.println("\n\n---\n\n");
                         System.out.println("=== LÄGG TILL PRODUKT ===");
-                        System.out.println("Fyll i nedan för att skapa en produkt");
+                        System.out.println("Fyll i nedan för att skapa en produkt\n");
+                        System.out.println("-------------------------------------\n");
 
+                        System.out.print("Ange kategori: ");
+                        String category = scanner.nextLine();
 
                         System.out.print("Ange artikelnummer: ");
                         int articleNumber = scanner.nextInt();
                         scanner.nextLine();
 
                         System.out.print("Title: ");
-                        String name = scanner.nextLine();
+                        String title = scanner.nextLine();
 
                         System.out.print("Pris: ");
                         int price = scanner.nextInt();
@@ -102,7 +106,7 @@ public class Application {
                         String description = scanner.nextLine();
 
                         // Skapa en ny produkt
-                        Product newProduct = new NewProduct(articleNumber, name, price, description);
+                        Product newProduct = new NewProduct(category, articleNumber, title, price, description);
                         catalog.add(newProduct);
 
                         System.out.println("\nProdukten har lagts till!");
@@ -131,6 +135,7 @@ public class Application {
                         System.out.println("\n\n---\n\n");
                         System.out.println("=== TA BORT PRODUKT ===");
                         System.out.println("Ange artikelnummer nedan på varan som du vill ta bort\n");
+                        System.out.println("-----------------------------------------------------\n");
                         for (Product product : catalog) {
                             System.out.println(product);
                         }

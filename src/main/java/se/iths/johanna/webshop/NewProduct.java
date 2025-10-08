@@ -1,13 +1,21 @@
 package se.iths.johanna.webshop;
 
 public class NewProduct extends Product {
-
-    public NewProduct(int articleNumber, String title, int price, String description) {
+    // Konstruktorn
+    public NewProduct(String category, int articleNumber, String title, int price, String description) {
         super(articleNumber, title, price, description);
+        this.category = category;
     }
+
+    private String category;
 
     @Override
     public String category() {
-        return "Ny produkt";
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + category() + "] ID: " + getArticleNumber() + " - " + " - " + getPrice() + " kr - " + getDescription();
     }
 }
